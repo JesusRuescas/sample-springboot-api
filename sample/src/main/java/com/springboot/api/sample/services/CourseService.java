@@ -6,4 +6,6 @@ import com.springboot.api.sample.model.CourseModel;
 
 public interface CourseService {
     public List<CourseModel> getCourse();
+
+    public CourseModel save(CourseModel course);
 }
