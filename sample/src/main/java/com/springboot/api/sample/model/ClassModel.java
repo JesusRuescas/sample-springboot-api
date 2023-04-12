@@ -1,7 +1,10 @@
 package com.springboot.api.sample.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.springframework.data.relational.core.mapping.Table;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,7 +16,10 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 
 @Entity
-public class ClassModel {
+@Table(name = "class")
+public class ClassModel implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

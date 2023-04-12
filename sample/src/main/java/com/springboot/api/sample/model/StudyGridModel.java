@@ -1,5 +1,6 @@
 package com.springboot.api.sample.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,8 +17,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "study_grid")
-public class StudyGridModel {
+public class StudyGridModel implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
