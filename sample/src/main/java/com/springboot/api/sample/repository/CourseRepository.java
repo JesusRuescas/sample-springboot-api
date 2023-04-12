@@ -20,15 +20,15 @@ public interface CourseRepository extends JpaRepository<CourseModel, Integer> {
     @Query(value = "Select c From CourseModel c")
     List<CourseModel> findByQueryName();
 
-    @Query(value = "Select course_name From course_table where area = 'Test'", nativeQuery = true)
+    @Query(value = "Select course_name From course where area = 'Test'", nativeQuery = true)
     List<String> findByQueryNamePeerArea();
 
-    @Query(value = "Select course_name From course_table where area = :area", nativeQuery = true)
+    @Query(value = "Select course_name From course where area = :area", nativeQuery = true)
     List<String> findByQueryNamePeerSelectedArea(@Param("area") String area);
 
-    @Query(value = "Select course_name From course_table where area = :area and course_name = :name", nativeQuery = true)
+    @Query(value = "Select course_name From course where area = :area and course_name = :name", nativeQuery = true)
     List<String> findByQueryNamePeerSelectedArea(@Param("area") String area, @Param("name") String name);
 
-    @Query(value = "Select course_name From course_table where area = ?1 and course_name = ?2", nativeQuery = true)
+    @Query(value = "Select course_name From course where area = ?1 and course_name = ?2", nativeQuery = true)
     List<String> findByQueryNamePeerAreaParam(String area, String name);
 }
