@@ -2,11 +2,23 @@ package com.springboot.api.sample.dto;
 
 import java.io.Serializable;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class CourseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private Integer id;
+
+    @NotBlank
+    @NotEmpty(message = "The name is empty")
+    @Size(min = 2, max = 30)
     private String name;
+
+    @NotBlank
+    @NotEmpty(message = "The name is empty")
+    @Size(min = 2, max = 40)
     private String area;
 
     public CourseDTO() {
